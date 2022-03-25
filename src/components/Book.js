@@ -1,16 +1,26 @@
 import './Book.css';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Book() {
+function Book({ book }) {
   return (
     <div className="book">
-      <h2 className="book-title">Book Title</h2>
-      <p className="book-author">Author</p>
+      <article className="book-info">
+        {book.title}
+        {book.author}
+      </article>
       <button className="remove-button" type="button">
         Remove Book
       </button>
     </div>
   );
 }
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Book;
