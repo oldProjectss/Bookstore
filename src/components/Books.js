@@ -6,16 +6,18 @@ import AddBook from './AddBook';
 
 function Books({ books }) {
   if (books) {
-    return (
-      <div>
-        <article>
-          {books.map((book) => (
-            <Book book={book} key={book.title} />
-          ))}
-        </article>
-        <AddBook />
-      </div>
-    );
+    if (books.length > 0) {
+      return (
+        <div>
+          <article>
+            {books.map((book) => (
+              <Book book={book} key={book.title} />
+            ))}
+          </article>
+          <AddBook />
+        </div>
+      );
+    }
   }
   return (
     <div>
