@@ -17,7 +17,12 @@ function Books({ books }) {
       </div>
     );
   }
-  return 'Book shelf Empty';
+  return (
+    <div>
+      <p>Book shelf is Empty</p>
+      <AddBook />
+    </div>
+  );
 }
 
 Books.propTypes = {
