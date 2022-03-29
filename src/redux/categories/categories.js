@@ -1,9 +1,9 @@
-export const checkStatus = (status) => {
-  return {
-    type: 'categories/checkStatus',
-    payload: status,
-  };
-};
+export const checkStatus = (status) => ({
+  type: 'categories/checkStatus',
+  payload: {
+    status,
+  },
+});
 
 const categoriesState = (state = [], action) => {
   switch (action.type) {
