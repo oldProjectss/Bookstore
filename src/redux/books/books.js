@@ -1,14 +1,18 @@
 export const addBook = ([]) => {
   return {
     type: 'books/bookAdded',
-    payload: {},
+    payload: {
+      index: 0,
+    },
   };
 };
 
 export const removeBook = ([]) => {
   return {
     type: 'books/bookRemoved',
-    payload: {},
+    payload: {
+      index: 0,
+    },
   };
 };
 
@@ -16,9 +20,9 @@ export const removeBook = ([]) => {
 const books = (state = [], action) => {
   switch (action.type) {
     case 'books/bookAdded':
-      return state.push(...action.payload);
+      return state.concat([{ type: action.type }]);
     case 'books/bookRemoved':
-      return state.pop(...action.payload);
+      return state.map((book, index) => (action.index === index ? state.splice(index - 1, 1) : book));
     default:
       return state;
   }
