@@ -18,7 +18,7 @@ export const removeBook = (arr) => ({
 });
 
 // need to dedside what is the state
-const reducer = (action, state = []) => {
+const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
       return state.concat([{ type: action.type }]);
