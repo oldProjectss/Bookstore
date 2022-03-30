@@ -1,34 +1,29 @@
+// import { useId } from 'react-id-generator';
+import generate from '../../components/generateId';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 export const addBook = (arr) => ({
   type: ADD_BOOK,
-  index: 0,
   payload: {
     arr,
   },
 });
 
-export const removeBook = (arr) => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
-  index: 0,
   payload: {
-    arr,
+    id,
   },
 });
 
-// need to dedside what is the state
-const reducer = (state = [], action = {}) => {
+const reducer = (state = [{ title: 'JavaScript The Definitive Guide', author: 'David Flanagan' }], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
-      return state.concat([{ type: action.type }]);
+      return state.concat({ id: generate(), ...action.payload.arr });
     case REMOVE_BOOK:
-      return state.map((book, index) => {
-        if (action.index === index) {
-          state.splice(index - 1, 1);
-        }
-        return book;
-      });
+      return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
