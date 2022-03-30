@@ -18,7 +18,7 @@ export const removeBook = (id) => ({
   },
 });
 
-const reducer = (state = [], action = {}) => {
+const reducer = (state = [{ title: 'JavaScript The Definitive Guide', author: 'David Flanagan' }], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
       return state.concat({ id: generate(), ...action.payload.arr });
