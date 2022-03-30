@@ -1,10 +1,12 @@
 import './Books.css';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import AddBook from './AddBook';
 
 function Books({ books }) {
+  const books = useSelector((state) => state.book);
   if (books) {
     if (books.length > 0) {
       return (
