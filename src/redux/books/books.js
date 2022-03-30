@@ -1,41 +1,29 @@
+// import { useId } from 'react-id-generator';
+import generate from '../../components/generateId';
+
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 export const addBook = (arr) => ({
   type: ADD_BOOK,
   payload: {
-    index: 0,
     arr,
   },
 });
 
-export const removeBook = (index) => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   payload: {
-    index: index,
+    id,
   },
 });
 
-// need to dedside what is the state
 const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case ADD_BOOK:
-      // I changed the return to use spred operator instead
-      return [
-        ...state,
-        {
-          type: action.type,
-          index: action.index,
-        },
-      ];
+      return state.concat({ id: generate(), ...action.payload.arr });
     case REMOVE_BOOK:
-      return state.map((book, index) => {
-        if (action.payload.index === index) {
-          // you may need to change ...state to ...book
-          return [...state.slice(0, index), ...state.slice(index + 1)];
-        }
-        return book;
-      });
+      return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
