@@ -18,20 +18,22 @@ function Books() {
   if (books) {
     if (books.length > 0) {
       return (
-        <div>
-          <article>
+        <div className="books-container">
+          <article className="book-booklist">
             {books.map((book) => (
               <Book book={book} key={book.id} />
             ))}
           </article>
+          <hr />
           <AddBook />
         </div>
       );
     }
   }
   return (
-    <div>
-      <p>Book shelf is Empty</p>
+    <div className="books-container">
+      <p className="no-book-message">Book shelf is Empty</p>
+      <hr />
       <AddBook />
     </div>
   );

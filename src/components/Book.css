@@ -1,5 +1,125 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.book-container {
+  width: 90vw;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+  padding: 1.6rem;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-category {
+  margin-bottom: 0.25rem;
+}
+
+.book-name {
+  color: #121212;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.37rem;
+}
+
+.book-author {
+  margin-bottom: 1.3rem;
+  color: #4386bf;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.87rem;
+}
+
+.comment-button,
+.edit-button,
+.remove-button {
+  border: none;
+  color: #4386bf;
+  background-color: #fff;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.88rem;
+  margin: 0.8rem 0.2rem;
+  padding: 1px 1rem;
+  cursor: pointer;
+}
+
+.comment-button:active,
+.edit-button:active,
+.remove-button:active {
+  opacity: 0.7;
+}
+
+.comment-button {
+  border-right: solid 1px rgba(62, 62, 62, 0.4);
+  padding-left: 1px;
+}
+
+.remove-button {
+  border-right: solid 1px rgba(62, 62, 62, 0.4);
+}
+
+.progress-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.book-progress {
+  display: flex;
+  align-items: center;
+}
+
+.spinner {
+  color: #379cf6;
+  font-size: 4rem;
+  margin-right: 1rem;
+}
+
+.progress-count {
+  font-family: Montserrat, sans-serif;
+}
+
+.progress-number {
+  font-size: 2rem;
+  color: #121212;
+}
+
+.progress-seperator {
+  height: 4.3rem;
+  border: solid 1px #000;
+  opacity: 0.1;
+  margin: 1px 10px;
+}
+
+.update-book-progress {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #121212;
+}
+
+.current {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-bottom: 0.43rem;
+}
+
+.chapter {
+  margin-bottom: 1.43rem;
+  font-size: 1rem;
+  letter-spacing: -0.4px;
+}
+
+.update-progress-btn {
+  border: none;
+  color: #fff;
+  background-color: #0290ff;
+  padding: 0.7rem;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.update-progress-btn:active {
+  opacity: 0.7;
 }

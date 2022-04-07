@@ -1,5 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+} 
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  height: 5.9rem;
+  margin: 0 0 2.37rem;
+  padding: 1.4rem 1.6rem 1.6rem 6.25rem;
+}
+
+.logo-navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo {
+  width: 15rem;
+  height: 2.3rem;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.85rem;
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.nav-link {
+  width: 3.6rem;
+  height: 1rem;
+  margin: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.83rem;
+  color: #121212;
+  text-decoration: none;
+  transition: opacity 400ms ease-in;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.profile {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin: 0;
+  padding: 0.87rem;
+  border: solid 1px #e8e8e8;
+  border-radius: 30px;
+  color: #0290ff;
+  cursor: pointer;
 }
