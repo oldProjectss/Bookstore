@@ -1,4 +1,3 @@
-// import Books from '../../components/Books';
 import generate from '../../components/generateId';
 
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';

@@ -1,5 +1,7 @@
 # Bookstore
 
+> The bookstore is a React app that gets and stores a book list in the API, it uses React as a front-end library and Redux for state management
+
 ## Build with
 
 - React
