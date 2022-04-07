@@ -11,25 +11,31 @@ function AddBook() {
   const formEvent = (e) => {
     e.preventDefault();
     dispatch(addBookInList({ title: bookTitle, author: bookAuthor, category: bookCategory }));
+    document.querySelector('.add-form').value = '';
+    document.querySelector('.add-form-author').value = '';
   };
   return (
     <div className="add-book">
+      <h3 className="add-book-headline">ADD NEW BOOK</h3>
       <form className="add-book-form" onSubmit={formEvent}>
-        <input className="add-form" type="text" placeholder="Book Title..." onChange={(e) => setBookTitle(e.target.value)} />
-        <input className="add-form-author" type="text" placeholder="Book Author..." onChange={(e) => setBookAuthor(e.target.value)} />
-        <select name="categories" onChange={(e) => setBookCategory(e.target.value)}>
-          <option value="fiction" key="fiction">
+        <input className="add-form" type="text" placeholder="Book Title..." onChange={(e) => setBookTitle(e.target.value)} required />
+        <input className="add-form-author" type="text" placeholder="Book Author..." onChange={(e) => setBookAuthor(e.target.value)} required />
+        <select className="add-form-categories" name="categories" onChange={(e) => setBookCategory(e.target.value)}>
+          <option value="Unknowen" key="categories">
+            Categories
+          </option>
+          <option value="Fiction" key="fiction">
             Fiction
           </option>
-          <option value="nonFiction" key="nonFiction">
+          <option value="Non Fiction" key="nonFiction">
             Non Fiction
           </option>
-          <option value="textBook" key="textBook">
+          <option value="Text book" key="textBook">
             Text Book
           </option>
         </select>
         <button className="form-btn" type="submit">
-          Add
+          ADD BOOK
         </button>
       </form>
     </div>

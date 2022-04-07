@@ -1,5 +1,18 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.check-status-btn {
+  color: #fff;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
 }
